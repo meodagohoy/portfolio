@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111111" />
+    <meta
+      name="description"
+      content="Portfolio of Romeo Dagohoy, an aspiring Full-Stack Developer and AI Engineer focused on web development, AI automation, and practical software solutions."
+    />
+    <meta
+      property="og:title"
+      content="Romeo Dagohoy | Aspiring Full-Stack Developer & AI Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Building software with intelligence — web development, AI automation, and practical software solutions."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <title>
+      Romeo Dagohoy | Aspiring Full-Stack Developer &amp; AI Engineer
+    </title>
+    <meta property="og:image" content="assets/images/profile.jpg" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Ctext x='8' y='43' fill='%23d2d2cc' font-family='Arial' font-weight='700' font-size='29'%3ERD.%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="sidebar-top">
+        <a class="brand" href="#home" aria-label="RD home"
+          >RD<span class="brand-mark">.</span></a
+        >
+        <div
+          class="portrait profile-placeholder"
+          id="profile-image"
+          role="img"
+          aria-label="Romeo Dagohoy's profile photo. An RD monogram is shown until assets/images/profile.jpg is added."
+        >
+          <img
+            id="profile-photo"
+            src="assets/images/profile.jpg"
+            alt="Romeo Dagohoy"
+          />
+          <span>RD</span>
+        </div>
+        <p class="profile-note">
+          Aspiring<br />Software Engineer<br />AI Engineer
+        </p>
+      </div>
+      <nav class="desktop-nav" id="desktop-nav"></nav>
+      <div class="sidebar-bottom">
+        <div class="social-links" id="social-links"></div>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Switch to light theme"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle__sun" aria-hidden="true">☼</span>
+          <span class="theme-toggle__label">LIGHT MODE</span>
+          <span class="theme-toggle__orb" aria-hidden="true"></span>
+        </button>
+      </div>
+    </aside>
+
+    <header class="mobile-header">
+      <a class="brand" href="#home" aria-label="RD home"
+        >RD<span class="brand-mark">.</span></a
+      >
+      <div class="mobile-header-actions">
+        <button
+          class="mobile-theme"
+          id="mobile-theme-toggle"
+          type="button"
+          aria-label="Switch theme"
+        >
+          ☼
+        </button>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="sr-only">Open menu</span><i></i><i></i>
+        </button>
+      </div>
+      <nav
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+      ></nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section" id="home" data-nav="HOME">
+        <div class="grid-noise" aria-hidden="true"></div>
+        <div class="section-index hero-index">00 / RD BUILD SYSTEM</div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="live-dot"></span> OPEN TO SOFTWARE ENGINEERING &amp;
+              AI OPPORTUNITIES
+            </p>
+            <h1 class="hero-title">
+              <span>BUILDING</span><span>SOFTWARE</span><span>WITH</span
+              ><span class="accent-text"
+                >INTELLIGENCE<span class="title-dot">.</span></span
+              >
+            </h1>
+            <div class="hero-bottom">
+              <p class="hero-subtitle">
+                Full-Stack Development <em>×</em> AI &amp; Automation
+              </p>
+              <p class="hero-intro">
+                A curious builder learning in public, one useful system at a
+                time.
+              </p>
+            </div>
+            <div class="hero-actions" id="hero-actions"></div>
+          </div>
+          <div class="status-panel reveal" aria-label="Current build status">
+            <div class="panel-header">
+              <span>RD / BUILD STATE</span><span class="panel-pulse">LIVE</span>
+            </div>
+            <div class="status-rows" id="status-rows"></div>
+            <div class="panel-status">
+              <span>STATUS</span><strong>ALWAYS LEARNING</strong>
+            </div>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about"
+          ><span>SCROLL TO EXPLORE</span><i aria-hidden="true"></i
+        ></a>
+      </section>
+
+      <section
+        class="build-state section section--inset"
+        aria-labelledby="build-state-heading"
+      >
+        <div class="section-index">01 / THE METHOD</div>
+        <div class="build-state__top reveal">
+          <div>
+            <p class="eyebrow">SIGNATURE INTERACTION</p>
+            <h2 id="build-state-heading">
+              FROM CURIOSITY<br />TO <span>CAPABILITY.</span>
+            </h2>
+          </div>
+          <p>
+            Each project is a chance to make an idea more useful, learn what
+            breaks, and build again with more intention.
+          </p>
+        </div>
+        <button
+          class="build-machine reveal"
+          id="build-machine"
+          type="button"
+          aria-label="Advance the build state. Current state: Learn"
+        >
+          <span class="machine-prompt">RD@BUILD:~$</span>
+          <span class="machine-states" id="machine-states"></span>
+          <span class="machine-hint">CLICK TO ADVANCE <b>↗</b></span>
+        </button>
+      </section>
+
+      <section
+        class="about section"
+        id="about"
+        data-nav="ABOUT"
+        aria-labelledby="about-heading"
+      >
+        <div class="section-index">02 / ORIGIN</div>
+        <div class="about-grid">
+          <h2 id="about-heading" class="reveal">
+            A CURIOUS BUILDER<br />WHO LEARNS <span>BY CREATING.</span>
+          </h2>
+          <div class="about-copy reveal">
+            <p>
+              I became interested in software development after seeing how
+              experienced engineers turn code into useful websites and
+              applications. That possibility stuck with me.
+            </p>
+            <p>
+              Now I build web experiences, explore AI agents, and look for ways
+              automation can make work clearer and more efficient. I am working
+              toward becoming a highly skilled Full-Stack Developer who creates
+              practical, intelligent solutions.
+            </p>
+            <div class="traits" id="traits"></div>
+          </div>
+        </div>
+        <div class="interest-strip reveal">
+          <span>PERSONAL SIGNALS</span
+          ><span>TRAVEL / CURIOSITY + EXPLORATION</span
+          ><span>ANIME / CREATIVITY + IMAGINATION</span>
+        </div>
+      </section>
+
+      <section
+        class="skills section section--inset"
+        id="skills"
+        data-nav="SKILLS"
+        aria-labelledby="skills-heading"
+      >
+        <div class="section-index">03 / TOOLKIT</div>
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">CURRENT CAPABILITIES</p>
+            <h2 id="skills-heading">
+              TOOLS FOR<br /><span>MAKING THINGS.</span>
+            </h2>
+          </div>
+          <p>
+            No inflated metrics. Just an honest snapshot of what I am using,
+            learning, and growing into.
+          </p>
+        </div>
+        <div class="skills-layout">
+          <div class="skill-list reveal" id="skill-list"></div>
+          <div class="learning-panel reveal">
+            <span class="panel-label">IN THE QUEUE / 2026</span>
+            <h3>Currently<br />learning<span>.</span></h3>
+            <div id="learning-list"></div>
+            <p>Growth is part of the system.</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="projects section"
+        id="projects"
+        data-nav="PROJECTS"
+        aria-labelledby="projects-heading"
+      >
+        <div class="section-index">04 / SELECTED BUILDS</div>
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">PRACTICAL EXPLORATION</p>
+            <h2 id="projects-heading">BUILT TO<br /><span>LEARN.</span></h2>
+          </div>
+          <p>
+            Projects are where the learning becomes tangible — shaping ideas
+            into interfaces, workflows, and more useful systems.
+          </p>
+        </div>
+        <div id="project-list"></div>
+      </section>
+
+      <section
+        class="experience section section--inset"
+        id="experience"
+        data-nav="EXPERIENCE"
+        aria-labelledby="experience-heading"
+      >
+        <div class="section-index">05 / PRACTICE</div>
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">EXPERIENCE</p>
+            <h2 id="experience-heading">CONTEXT<br /><span>MATTERS.</span></h2>
+          </div>
+        </div>
+        <div class="timeline" id="experience-list"></div>
+      </section>
+
+      <section
+        class="education section"
+        id="education"
+        data-nav="EDUCATION"
+        aria-labelledby="education-heading"
+      >
+        <div class="section-index">06 / FOUNDATION</div>
+        <div class="education-layout">
+          <div class="reveal">
+            <p class="eyebrow">EDUCATION + CREDENTIALS</p>
+            <h2 id="education-heading">THE BASE<br />LAYER<span>.</span></h2>
+          </div>
+          <div class="education-content reveal" id="education-content"></div>
+        </div>
+      </section>
+
+      <section
+        class="learning section section--inset"
+        id="learning"
+        data-nav="LEARNING"
+        aria-labelledby="learning-heading"
+      >
+        <div class="section-index">07 / MOMENTUM</div>
+        <div class="learning-head reveal">
+          <p class="eyebrow">CONTINUOUS GROWTH</p>
+          <h2 id="learning-heading">
+            ALWAYS LEARNING.<br /><span>ALWAYS BUILDING.</span>
+          </h2>
+        </div>
+        <div class="learning-track reveal" id="learning-track"></div>
+        <div class="training reveal">
+          <span>TRAINING SIGNALS</span>
+          <div>
+            <strong>FULL-STACK DEVELOPMENT</strong
+            ><strong>AGENTIC AI WORKSHOP</strong>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="contact section"
+        id="contact"
+        data-nav="CONTACT"
+        aria-labelledby="contact-heading"
+      >
+        <div class="section-index">08 / CONNECTION</div>
+        <div class="contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">START A CONVERSATION</p>
+            <h2 id="contact-heading">
+              LET'S BUILD<br /><span>SOMETHING.</span>
+            </h2>
+            <p>
+              I'm looking for opportunities to grow as a Software Engineer and
+              AI-focused developer while building practical, innovative
+              solutions.
+            </p>
+            <div class="contact-details" id="contact-details"></div>
+          </div>
+          <form class="contact-form reveal" id="contact-form">
+            <div class="form-header">
+              <span>NEW MESSAGE</span><span>01 / 01</span>
+            </div>
+            <label
+              >Your name<input
+                name="name"
+                autocomplete="name"
+                placeholder="[YOUR NAME]"
+                required /></label
+            ><label
+              >Your email<input
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="[YOUR EMAIL]"
+                required /></label
+            ><label
+              >What are we building?<textarea
+                name="message"
+                rows="4"
+                placeholder="[YOUR MESSAGE]"
+                required
+              ></textarea></label
+            ><button class="button button--solid" type="submit">
+              SEND MESSAGE <span>↗</span>
+            </button>
+            <p class="form-message" id="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#home">RD<span class="brand-mark">.</span></a>
+      <p>BUILDING SOFTWARE WITH INTELLIGENCE.</p>
+      <p>© 2026 ROMEO DAGOHOY</p>
+      <div class="footer-links" id="footer-links"></div>
+      <a class="back-top" href="#home">BACK TO TOP ↑</a>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
