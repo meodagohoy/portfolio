@@ -118,10 +118,11 @@ h3 span {
   justify-self: center;
 }
 .portrait {
-  width: 68px;
-  height: 68px;
+  width: 76px;
+  height: 76px;
+  margin-top: 15px;
   border: 1px solid var(--accent);
-  border-radius: 50%;
+  border-radius: 0;
   justify-self: center;
   position: relative;
   display: grid;
@@ -310,7 +311,7 @@ main {
   font-size: clamp(46px, 7vw, 108px);
   line-height: 0.91;
   letter-spacing: -0.08em;
-  font-weight: 800;
+  font-weight: 900;
 }
 .hero-title span {
   display: block;

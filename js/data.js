@@ -2,13 +2,13 @@
 const portfolioData = {
   name: "Romeo Dagohoy",
   shortName: "Romeo",
-  title: "Aspiring Full-Stack Developer & AI Engineer",
-  email: "your.email@example.com", // [ADD EMAIL]
+  title: "Aspiring Software & AI Engineer",
+  email: "meo.dagohoy@gmail.com", // [ADD EMAIL]
   phone: "+63 XXX XXX XXXX", // [ADD PHONE]
-  github: "https://github.com/yourusername", // [ADD GITHUB]
-  linkedin: "https://www.linkedin.com/in/yourusername", // [ADD LINKEDIN]
-  resumePath: "assets/Romeo-Dagohoy-Resume.pdf", // Add the real file here before setting resumeAvailable to true.
-  resumeAvailable: false,
+  github: "https://github.com/meodagohoy", // [ADD GITHUB]
+  linkedin: "https://www.linkedin.com/in/meodagohoy", // [ADD LINKEDIN]
+  resumePath: "assets/romeo_dagohoy.pdf", // Add the real file here before setting resumeAvailable to true.
+  resumeAvailable: true,
   profileImage: "assets/images/profile.jpg", // [ADD PROFILE PHOTO]
   otherLink: "", // [ADD LINK]
   nav: [
