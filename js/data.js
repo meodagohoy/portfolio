@@ -36,17 +36,28 @@ const portfolioData = {
     "ADAPTABLE",
   ],
   skills: [
-    ["HTML", "INTERMEDIATE"],
-    ["CSS", "INTERMEDIATE"],
-    ["JavaScript", "BASIC"],
-    ["Git", "INTERMEDIATE"],
-    ["GitHub", "INTERMEDIATE"],
-    ["Bootstrap", "BASIC"],
-    ["Figma", "BEGINNER"],
-    ["VS Code", "INTERMEDIATE"],
-    ["AI Tools", "INTERMEDIATE"],
+    {
+      category: "Front-End Development",
+      items: ["HTML", "CSS", "JavaScript", "Bootstrap", "React"],
+    },
+    {
+      category: "Back-End Development",
+      items: ["Node.js"],
+    },
+    {
+      category: "AI & Automation",
+      items: ["Microsoft Copilot Studio", "Automation"],
+    },
+    {
+      category: "Version Control",
+      items: ["Git", "GitHub"],
+    },
+    {
+      category: "Development Tools",
+      items: ["VS Code"],
+    },
   ],
-  learning: ["JavaScript", "AI / Automation", "Python"],
+  learning: ["JavaScript/React", "AI / Automation", "Node.js"],
   projects: [
     {
       number: "01",

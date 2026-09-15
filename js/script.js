@@ -21,8 +21,6 @@ function icon(name) {
 }
 
 function button(label, href, solid = false, extra = "", variant = "") {
-  if (!href)
-    return `<span class="button ${solid ? "button--solid" : "button--outline"} ${variant} button--disabled" aria-disabled="true" title="Update this editable placeholder in js/data.js">${label} <span>↗</span></span>`;
   return `<a class="button ${solid ? "button--solid" : "button--outline"} ${variant}" href="${href}" ${extra}>${label} <span>↗</span></a>`;
 }
 
@@ -34,7 +32,20 @@ function renderNavigation() {
     )
     .join("");
   $("#desktop-nav").innerHTML = navItems;
-  const socialLinks = `<a class="icon-link" href="${data.github}" ${externalAttrs} aria-label="GitHub" title="GitHub">${icon("github")}</a><a class="icon-link" href="${data.linkedin}" ${externalAttrs} aria-label="LinkedIn" title="LinkedIn">${icon("linkedin")}</a><a class="icon-link" href="mailto:${data.email}" aria-label="Email" title="Email">${icon("mail")}</a>`;
+
+  const socialItems = [
+    { name: "github", href: data.github, label: "GitHub" },
+    { name: "linkedin", href: data.linkedin, label: "LinkedIn" },
+    { name: "mail", href: `mailto:${data.email}`, label: "Email" },
+  ].filter((item) => item.href);
+
+  const socialLinks = socialItems
+    .map(
+      (item) =>
+        `<a class="icon-link" href="${item.href}" ${item.name === "mail" ? "" : externalAttrs} aria-label="${item.label}" title="${item.label}">${icon(item.name)}</a>`,
+    )
+    .join("");
+
   $("#mobile-menu").innerHTML =
     `${data.nav.map((item) => `<a href="#${slug(item)}">${item}</a>`).join("")}<div class="mobile-socials"><div class="mobile-social-icons">${socialLinks}</div></div>`;
   $("#social-links").innerHTML = `<div class="social-icons">${socialLinks}</div>`;
@@ -57,8 +68,12 @@ function renderAboutAndSkills() {
         `<span><i>${String(i + 1).padStart(2, "0")}</i>${trait}</span>`,
     )
     .join("");
-  $("#skill-list").innerHTML =
-    `<div class="skill-list__header"><span>SKILL</span><span>WORKING LEVEL</span></div>${data.skills.map(([name, level], i) => `<div class="skill-row"><span><i>${String(i + 1).padStart(2, "0")}</i>${name}</span><b>${level}</b></div>`).join("")}`;
+  $("#skill-list").innerHTML = data.skills
+    .map(
+      (category) =>
+        `<div class="skill-category"><div class="skill-list__header"><span>${category.category}</span></div><div class="skill-pills">${category.items.map((name) => `<span class="skill-pill">${name}</span>`).join("")}</div></div>`,
+    )
+    .join("");
   $("#learning-list").innerHTML = data.learning
     .map(
       (item, i) =>
