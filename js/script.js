@@ -8,10 +8,22 @@ const $$ = (selector, parent = document) => [
 const slug = (label) => label.toLowerCase();
 const externalAttrs = `target="_blank" rel="noreferrer"`;
 
-function button(label, href, solid = false, extra = "") {
+function icon(name) {
+  const paths = {
+    github: '<path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.61-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 7.6c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>',
+    linkedin: '<path d="M6.5 8.5A1.5 1.5 0 1 0 6.5 5a1.5 1.5 0 0 0 0 3.5ZM5 10h3v9H5v-9Zm5 0h2.9v1.23h.04c.4-.76 1.38-1.56 2.84-1.56C18.82 9.67 20 11.4 20 14v5h-3v-4.42c0-1.05-.02-2.4-1.47-2.4-1.47 0-1.69 1.15-1.69 2.32V19h-3v-9Z"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+    file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>',
+    moon: '<path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/>',
+  };
+  return `<svg class="nav-icon nav-icon--${name}" viewBox="0 0 24 24" aria-hidden="true">${paths[name]}</svg>`;
+}
+
+function button(label, href, solid = false, extra = "", variant = "") {
   if (!href)
-    return `<span class="button ${solid ? "button--solid" : "button--outline"} button--disabled" aria-disabled="true" title="Update this editable placeholder in js/data.js">${label} <span>↗</span></span>`;
-  return `<a class="button ${solid ? "button--solid" : "button--outline"}" href="${href}" ${extra}>${label} <span>↗</span></a>`;
+    return `<span class="button ${solid ? "button--solid" : "button--outline"} ${variant} button--disabled" aria-disabled="true" title="Update this editable placeholder in js/data.js">${label} <span>↗</span></span>`;
+  return `<a class="button ${solid ? "button--solid" : "button--outline"} ${variant}" href="${href}" ${extra}>${label} <span>↗</span></a>`;
 }
 
 function renderNavigation() {
@@ -22,10 +34,10 @@ function renderNavigation() {
     )
     .join("");
   $("#desktop-nav").innerHTML = navItems;
+  const socialLinks = `<a class="icon-link" href="${data.github}" ${externalAttrs} aria-label="GitHub" title="GitHub">${icon("github")}</a><a class="icon-link" href="${data.linkedin}" ${externalAttrs} aria-label="LinkedIn" title="LinkedIn">${icon("linkedin")}</a><a class="icon-link" href="mailto:${data.email}" aria-label="Email" title="Email">${icon("mail")}</a>`;
   $("#mobile-menu").innerHTML =
-    `${data.nav.map((item) => `<a href="#${slug(item)}">${item}</a>`).join("")}<div class="mobile-socials"><a href="${data.github}" ${externalAttrs}>GITHUB ↗</a><a href="${data.linkedin}" ${externalAttrs}>LINKEDIN ↗</a><span>RESUME / ADD FILE</span></div>`;
-  $("#social-links").innerHTML =
-    `<a href="${data.github}" ${externalAttrs}>GITHUB <span>↗</span></a><a href="${data.linkedin}" ${externalAttrs}>LINKEDIN <span>↗</span></a>${data.resumeAvailable ? `<a href="${data.resumePath}" download>RESUME <span>↗</span></a>` : `<span class="placeholder-link" title="Add /assets/Romeo-Dagohoy-Resume.pdf, then set resumeAvailable to true in js/data.js">RESUME / ADD FILE</span>`}`;
+    `${data.nav.map((item) => `<a href="#${slug(item)}">${item}</a>`).join("")}<div class="mobile-socials"><div class="mobile-social-icons">${socialLinks}</div></div>`;
+  $("#social-links").innerHTML = `<div class="social-icons">${socialLinks}</div>`;
 }
 
 function renderFooter() {
@@ -34,14 +46,8 @@ function renderFooter() {
 }
 
 function renderHero() {
-  $("#status-rows").innerHTML = data.statuses
-    .map(
-      ([label, state]) =>
-        `<div class="status-row"><span>${label}</span><b class="status-symbol status-symbol--${state}" aria-label="${state}"></b></div>`,
-    )
-    .join("");
   $("#hero-actions").innerHTML =
-    `${button("EXPLORE MY WORK", "#projects", true)}${data.resumeAvailable ? button("DOWNLOAD RESUME ↓", data.resumePath, false, "download") : `<span class="resume-status" title="Add the resume file at ${data.resumePath}, then enable it in js/data.js">DOWNLOAD RESUME ↓ / ADD FILE</span>`}`;
+    `${button("EXPLORE MY WORK", "#projects", true)}${data.resumeAvailable ? button("DOWNLOAD RESUME ↓", data.resumePath, true, "download", "button--resume") : `<span class="resume-status" title="Add the resume file at ${data.resumePath}, then set resumeAvailable to true in js/data.js">DOWNLOAD RESUME ↓ / ADD FILE</span>`}`;
 }
 
 function renderAboutAndSkills() {
@@ -131,8 +137,11 @@ function initTheme() {
       "aria-label",
       `Switch to ${light ? "dark" : "light"} theme`,
     );
-    $(".theme-toggle__label").textContent = light ? "DARK MODE" : "LIGHT MODE";
-    $("#mobile-theme-toggle").textContent = light ? "◐" : "☼";
+    $("#theme-toggle").setAttribute("title", `Switch to ${light ? "dark" : "light"} mode`);
+    $(".theme-toggle__label").textContent = light ? "Dark mode" : "Light mode";
+    $(".theme-toggle__sun").innerHTML = light ? icon("sun") : icon("moon");
+    $("#mobile-theme-toggle").innerHTML = light ? icon("sun") : icon("moon");
+    $("#mobile-theme-toggle").setAttribute("aria-label", `Switch to ${light ? "dark" : "light"} mode`);
   };
   setTheme(saved || preferred);
   const toggle = () =>
@@ -223,8 +232,15 @@ function initInteractions() {
   $$("[data-nav]").forEach((section) => navObserver.observe(section));
   $("#contact-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    $("#form-message").textContent =
-      "CONTACT ROUTING / Add your form endpoint to enable sending.";
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+    const subject = `Portfolio inquiry from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+
+    $("#form-message").textContent = "OPENING YOUR EMAIL APP...";
+    window.location.href = `mailto:${data.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
 
@@ -258,6 +274,5 @@ renderExperience();
 renderEducation();
 renderLearningAndContact();
 initTheme();
-initBuildMachine();
 initImageFallbacks();
 initInteractions();

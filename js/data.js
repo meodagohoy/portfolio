@@ -2,15 +2,15 @@
 const portfolioData = {
   name: "Romeo Dagohoy",
   shortName: "Romeo",
-  title: "Aspiring Software & AI Engineer",
-  email: "meo.dagohoy@gmail.com", // [ADD EMAIL]
-  phone: "+63 XXX XXX XXXX", // [ADD PHONE]
-  github: "https://github.com/meodagohoy", // [ADD GITHUB]
-  linkedin: "https://www.linkedin.com/in/meodagohoy", // [ADD LINKEDIN]
-  resumePath: "assets/romeo_dagohoy.pdf", // Add the real file here before setting resumeAvailable to true.
+  title: "AI & Full-Stack Developer",
+  email: "meo.dagohoy@gmail.com",
+  phone: "+639 26 649 8805",
+  github: "https://github.com/meodagohoy",
+  linkedin: "https://www.linkedin.com/in/meodagohoy",
+  resumePath: "assets/romeo.dagohoy - resume.pdf",
   resumeAvailable: true,
-  profileImage: "assets/images/profile.jpg", // [ADD PROFILE PHOTO]
-  otherLink: "", // [ADD LINK]
+  profileImage: "assets/images/profile.jpg",
+  otherLink: "",
   nav: [
     "HOME",
     "ABOUT",
@@ -53,9 +53,9 @@ const portfolioData = {
       featured: true,
       type: "FEATURED AI BUILD",
       name: "MODERATOR",
-      subtitle: "AI-Powered Content Moderation Assistant",
+      subtitle: "AI-Powered Assistant",
       description:
-        "An AI-powered assistant built with Microsoft Copilot Studio to support content moderation workflows by reviewing content against defined policies and providing an approval or rejection recommendation with an explanation for its decision.",
+        "An AI-powered assistant built with Microsoft Copilot Studio to support building projects.",
       role: "CREATOR / CONTENT MODERATOR",
       platform: "MICROSOFT COPILOT STUDIO",
       tags: ["AI", "AUTOMATION", "PROMPT ENGINEERING", "CONTENT ANALYSIS"],
@@ -144,9 +144,9 @@ const portfolioData = {
     {
       date: "JUN 2026 — PRESENT",
       company: "ACCENTURE",
-      title: "Trust & Safety New Associate",
+      title: "Consulting Associate",
       description:
-        "Developing rigor around content moderation, policy-based decision making, attention to detail, and process improvement. This professional context sharpened my interest in practical AI applications, prompt engineering, and building helpful AI agents.",
+        "Developing rigor in tech, policy-based decision making, attention to detail, and process improvement. This professional context sharpened my interest in practical AI applications, prompt engineering, and building helpful AI agents.",
     },
     {
       date: "6-MONTH INTERNSHIP",
@@ -160,22 +160,22 @@ const portfolioData = {
     school: "Pamantasan ng Lungsod ng San Pablo",
     degree: "Bachelor's Degree — Web & Game Development",
     detail: "4-year program",
-    capstone: "[TO BE ADDED]",
+    capstone: "CURRENTLY BUILDING A STRONGER PORTFOLIO FOUNDATION",
   },
   certifications: [
     [
       "01",
-      "[ADD CERTIFICATION NAME]",
+      "AI & AUTOMATION FOUNDATIONS",
       "ACCENTURE",
-      "[ADD DATE]",
-      "[ADD CREDENTIAL LINK]",
+      "2026",
+      "#",
     ],
     [
       "02",
-      "[ADD CERTIFICATION NAME]",
-      "[ADD ORGANIZATION]",
-      "[ADD DATE]",
-      "[ADD CREDENTIAL LINK]",
+      "WEB DEVELOPMENT ESSENTIALS",
+      "SELF-DIRECTED LEARNING",
+      "2026",
+      "#",
     ],
   ],
 };

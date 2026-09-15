@@ -16,7 +16,7 @@ Edit `js/data.js` for the name, contact links, skills, projects, experience, cre
 - Moderator images: `assets/images/moderator/`
 - AnimePlaka images: `assets/images/animeplaka/`
 - Tindog images: `assets/images/tindog/`
-- Resume: `assets/Romeo-Dagohoy-Resume.pdf`
+- Resume: `assets/romeo.dagohoy - resume.pdf`
 
 Add the real resume, then set `resumeAvailable` to `true` in `js/data.js`. Missing images automatically show designed placeholders rather than broken-image icons.
 
