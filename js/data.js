@@ -155,7 +155,7 @@ const portfolioData = {
     {
       date: "JUN 2026 — PRESENT",
       company: "ACCENTURE",
-      title: "Consulting Associate",
+      title: "Trust & Safety Associate",
       description:
         "Developing rigor in tech, policy-based decision making, attention to detail, and process improvement. This professional context sharpened my interest in practical AI applications, prompt engineering, and building helpful AI agents.",
     },
